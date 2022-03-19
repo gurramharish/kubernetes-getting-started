@@ -65,3 +65,17 @@ kubectl exec -it <pod_name> -- bin/bash
 ```sh
 kubectl describe pod <pod_name>
 ```
+
+## Create Pod using run command
+
+```sh
+kubectl run my-pod --image=gurramh/department-service:v1.0.0
+```
+
+## To port forward from local port to cluster port
+
+```sh
+kubectl port-forward my-pod 8081:8081
+```
+
+
