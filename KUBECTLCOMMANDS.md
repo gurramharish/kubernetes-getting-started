@@ -117,4 +117,10 @@ kubectl describe pod my-pod-name
 kubectl apply -f my-pod.yml
 ```
 
+## To see the labels on deployment
+
+```sh
+kubectl get deployments my-deployment --show-labels
+```
+
 
