@@ -78,4 +78,43 @@ kubectl run my-pod --image=gurramh/department-service:v1.0.0
 kubectl port-forward my-pod 8081:8081
 ```
 
+## To run port forwarding in backgorund
+
+```sh
+kubectl port-forward myp-pod 8081:8081 &
+
+# With above command even if you exit the command prompt it will listening on the port in background
+
+## To get the process id for the port listening, use bellow command and kill the process to release the port number
+
+ps -ef | grep port-forward
+
+## The above command will print the process id, take the respective pid and kill it
+kill -9 <pid>
+```
+
+## Create pod using YAML and save the config in annotations
+
+```sh
+kubectl create -f my-pod.yml --save-config
+```
+
+## Get pod information in json or yml
+
+```sh
+kubectl get pod my-pod-name -o yml
+```
+
+## Describe pod
+
+```sh
+kubectl describe pod my-pod-name
+```
+
+## Create pods using apply command
+
+```sh
+kubectl apply -f my-pod.yml
+```
+
 
