@@ -123,4 +123,22 @@ kubectl apply -f my-pod.yml
 kubectl get deployments my-deployment --show-labels
 ```
 
+## Create a secret and store securely in kubernetes
+
+```sh
+kubectl create secret generic my-secret --from-literal=pwd=my-password
+```
+
+## Create a secret from a file
+
+```sh
+kubectl create secret generic my-secret --from-file=ssh-privatekey=~/.ssh/id_rsa --from-file=ssh-publickey=~/.ssh/id_rsa.pub
+```
+
+## Create a secret from a key pair(SSL/TSL)
+
+```sh
+kubectl create secret tls tls-secret --cert=path/to/tls.cert --key=path/to/tls.key
+```
+
 
