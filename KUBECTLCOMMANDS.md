@@ -127,6 +127,9 @@ kubectl get deployments my-deployment --show-labels
 
 ```sh
 kubectl create secret generic my-secret --from-literal=pwd=my-password
+
+kubectl create secret generic postgres-secret --from-literal=postgres-password=YOUR_PASSWORD_HERE
+
 ```
 
 ## Create a secret from a file
@@ -140,5 +143,6 @@ kubectl create secret generic my-secret --from-file=ssh-privatekey=~/.ssh/id_rsa
 ```sh
 kubectl create secret tls tls-secret --cert=path/to/tls.cert --key=path/to/tls.key
 ```
+
 
 
