@@ -144,5 +144,36 @@ kubectl create secret generic my-secret --from-file=ssh-privatekey=~/.ssh/id_rsa
 kubectl create secret tls tls-secret --cert=path/to/tls.cert --key=path/to/tls.key
 ```
 
+## To find current namespace
+
+```sh
+kubectl config view | grep namespace
+```
+
+## Change namespace in cluster
+
+```sh
+kubectl config set-context --current --namespace=my-namespace
+```
+
+## To find current cluster
+
+```sh
+kubectl config view | grep cluster
+```
+
+## To see available contexts
+
+```sh
+kubectl config get-contexts
+```
+
+## To change cluster
+
+```sh
+kubectl config use-context my-context
+```
+
+
 
 
