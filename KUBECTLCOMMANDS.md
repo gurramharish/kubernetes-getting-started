@@ -174,6 +174,12 @@ kubectl config get-contexts
 kubectl config use-context my-context
 ```
 
+## Get Secert value
+
+```sh
+kubectl get secret <secret-name> -o jsonpath='{.data.<key>}' | base64 --decode
+```
+
 
 
 
