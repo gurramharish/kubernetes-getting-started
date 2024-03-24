@@ -32,7 +32,12 @@ Ans: Master Node manages the cluster
         * Gatekeeper for authentication
     * Scheduler
         * API Server passest he request for scheduling pod and sends to the worker nodes.
-        * Scheduler is intelligent to find which node the pod should be deployed so the request is send to particular worker node based on how much resources your pod need and checks the available resources on each wroker node.
+        * Scheduler is intelligent to find which node the pod should be deployed so the request is send to particular worker node based on how much resources your pod need and checks the available resources on each wroker node and finds the least busy.
+    * Controller Manager
+        * Detect state changes like pods crash and tries to recover the required state by passing the request to scheduler.
+    * etcd
+        * key-value store of a cluster state
+        * cluster changes get stored in etcd
 
 ## Pod
 
